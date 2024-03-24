@@ -1,0 +1,109 @@
+1. Write a locator (CSS selector/XPath) for the red form validation styling
+
+Done is the locators file, utils/locators.py
+
+2. Find the console message printed
+
+Hello! I am in the done part of the ajax call
+
+3. Write a Selenium script to test that the factorial of 7 is 5040
+
+Done. tests/test_Factorial.py
+
+4. Figure out the API call being made along with the headers and parameters sent
+
+Accept	text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Encoding	gzip, deflate, br
+Accept-Language	en-US,en;q=0.5
+Connection	keep-alive
+Content-Length	8
+Content-Type	application/x-www-form-urlencoded; charset=UTF-8
+DNT	1
+Host	127.0.0.1:6464
+Origin	null
+Sec-Fetch-Dest	document
+Sec-Fetch-Mode	navigate
+Sec-Fetch-Site	cross-site
+Sec-GPC	1
+Upgrade-Insecure-Requests	1
+User-Agent	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0
+
+
+Request  - POST
+http://127.0.0.1:6464/factorial
+
+using form data: number	"7"
+
+Response -> 200
+{
+  "answer": 5040
+}
+
+5. Write a bug report
+
+Bug Report: Factorial Calculator Web Application
+Bug Summary:
+
+The factorial calculation function produces incorrect results for factorials of large numbers.
+
+Expected Behavior:
+
+The application should accurately calculate the factorial of any non-negative integer entered by the user.
+
+Actual Behavior:
+
+When the user enters a large number (typically exceeding 12 or higher), the calculated factorial value becomes inaccurate or overflows.
+
+Steps to Reproduce:
+
+Open the factorial calculator web application.
+Enter a large positive integer in the text box (e.g., 15, 20).
+Click the "Calculate" button.
+Observe that the displayed factorial value is incorrect or an error message appears.
+Additional Information:
+
+Browser: [Chrome, Firefox]
+Operating System: Windows 10
+Severity: High (This bug prevents the core functionality of the application for larger factorials.)
+Possible Solution:
+
+The application could implement error handling for potential overflows by using data types with larger capacity or handling the calculation differently for very large factorials.
+
+
+6. Document a test case
+
+Test Case: Factorial Calculation - Large Number
+Test Case ID: TC-003
+
+Description: This test case verifies if the application calculates the factorial of a large number accurately.
+
+Pre-Conditions:
+
+The factorial calculator web application is open.
+Test Data:
+
+Input Value: 15 (or any other large positive integer)
+Test Steps:
+
+Enter the test data value (15) in the text box.
+Click the "Submit" button.
+Expected Result:
+
+The application should display the correct factorial value for 15, which is 1,307,674,368,000.
+Alternatively, an informative message can be displayed indicating the limitations of calculating very large factorials.
+Pass/Fail Criteria:
+
+The test case passes if the displayed factorial value matches the expected result (1,307,674,368,000) or an appropriate message is shown for very large factorials.
+The test case fails if the displayed value is incorrect or an unexpected error message appears.
+Additional Notes:
+
+This test case can be repeated with different large positive integers to ensure consistent behavior.
+The expected result value (1,307,674,368,000) may vary depending on the data type used for calculations. It's important to consider the application's limitations for handling very large factorials.
+
+
+7. Include test coverage
+
+
+
+
+8. Add any documentation that might be necessary to explain your process, include this in a file in the repo.
