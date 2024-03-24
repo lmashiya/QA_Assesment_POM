@@ -12,7 +12,7 @@ class FactorialPage(BasePage):
        :param driver: Selenium webdriver object
        :param config: ConfigFactory object
        """
-        super().__init__(driver,config)
+        super().__init__(driver, config)
 
     def navigate_to_page(self):
         """
@@ -25,7 +25,7 @@ class FactorialPage(BasePage):
         Enters provided number in number input field.
         :param number: number to enter.
         """
-        self.enter_text(FactorialPageLocators.FACTORIAL_INPUT,number)
+        self.enter_text(FactorialPageLocators.FACTORIAL_INPUT, number)
 
     def click_calculate_btn(self):
         """
@@ -44,17 +44,18 @@ class FactorialPage(BasePage):
         Retrieves the answer message displayed on factorial page
         """
         return self.get_text(FactorialPageLocators.FACTORIAL_SUCCESS_MESSAGE)
+
     def verify_factorial_page(self):
         """
         validate factorial page loaded
         """
         assert self.get_text(FactorialPageLocators.FACTORIAL_TITLE).__contains__("calculator")
 
-    def enter_valid_factorial(self,number: str):
+    def enter_valid_factorial(self, number: str):
         """
         Enter valid factorial number.
         :param number: number to get factorial answer
         """
         self.enter_number(number)
         self.click_calculate_btn()
-        assert self.get_answer().__contains__("7")
+        assert self.get_answer().__contains__("5040")

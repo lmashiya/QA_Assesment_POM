@@ -51,7 +51,7 @@ class DriverFactory:
             raise Exception(f"Invalid browser choice: {browser}")
 
     @staticmethod
-    def _browser_settings(self, driver):
+    def _browser_settings(driver):
         driver.implicitly_wait(ConfigFactory().timeout())
         driver.maximize_window()
         return driver

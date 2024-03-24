@@ -8,7 +8,7 @@ class ConfigFactory:
         Initialize class , Loads properties from the 'Resources/config.properties' file.
         """
         self.configs = Properties()
-        with open(r"Resources/config.properties", "rb") as read_prop:
+        with open(r"../resources/config.properties", "rb") as read_prop:
             self.configs.load(read_prop)
 
     def fetch(self, property_key: str) -> str:
@@ -29,8 +29,8 @@ class ConfigFactory:
         """
         return self.fetch("BROWSER")
 
-    def timeout(self) -> int:
+    def timeout(self) -> float:
         """
         Fetch the timeout property value.
         """
-        return int(self.fetch("TIMEOUT"))
+        return float(self.fetch("TIMEOUT"))

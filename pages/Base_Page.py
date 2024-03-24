@@ -18,7 +18,7 @@ class BasePage:
 
         self.driver = driver
         self.config = config
-        self._wait = WebDriverWait(self.driver, self.config.timeout)
+        self._wait = WebDriverWait(self.driver, 10)
         self.logger = logging.getLogger(__name__)
 
     def _find(self, locator: Tuple) -> webdriver.remote:
