@@ -9,5 +9,3 @@ class FactorialPageLocators(object):
      FACTORIAL_TITLE: Tuple = ()
      FACTORIAL_CALCULATE_BTN: Tuple = ()
      FACTORIAL_INPUT: Tuple = ()
-     FACTORIAL_ERROR_MESSAGE: Tuple = ()
-     FACTORIAL_ERROR_MESSAGE: Tuple = ()
