@@ -7,13 +7,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from utils.config_factory import ConfigFactory
 
+
 class BasePage:
     """
     BasePage class serves as the parent class for all the pages in the application
     Contains methods for interacting with web elements and a shred wait instance
     """
 
-    def __init__(self,driver: webdriver, config: ConfigFactory):
+    def __init__(self, driver: webdriver, config: ConfigFactory):
 
         self.driver = driver
         self.config = config
@@ -32,7 +33,7 @@ class BasePage:
             )
             raise e
 
-    def click_element(self,locator: Tuple):
+    def click_element(self, locator: Tuple):
         """
         Click on specified element
         """
@@ -44,7 +45,7 @@ class BasePage:
             )
             raise e
 
-    def enter_text(self,locator: Tuple,text: str):
+    def enter_text(self, locator: Tuple, text: str):
         """
         Enter text into an element specified by the locator
         """
@@ -58,7 +59,7 @@ class BasePage:
             )
             raise e
 
-    def get_text(self,locator: Tuple) -> str:
+    def get_text(self, locator: Tuple) -> str:
         """
         Get text specified by the locator
         """
@@ -69,7 +70,3 @@ class BasePage:
                 f"Error while getting text. Locator: {locator}, Error: {e}"
             )
             raise e
-
-
-
-
